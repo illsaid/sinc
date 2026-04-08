@@ -1,0 +1,246 @@
+# PRODUCT_MEMO_V0_3.md
+
+# Sinc — Product Memo v0.3
+
+## What Sinc is
+
+**Sinc is a finite personal front page for the post-algorithm internet.**
+
+It sits above the platforms and sources a user already consumes, treats them as content pipes rather than experiences, and turns them into small, finishable, domain-specific **sinc lists** shaped by the user’s taste and, later, by the tastes of other humans they choose to trust. :contentReference[oaicite:0]{index=0}
+
+Sinc is not a wellness app, not a “use your phone less” app, and not another social feed. It is an attempt to restore **human curation, closure, and judgment** to a media environment dominated by recursive platform algorithms. 
+
+A useful framing line:
+
+**The internet scaled the performance of taste. Sinc is an attempt to restore the shelf.** :contentReference[oaicite:2]{index=2}
+
+## The problem
+
+Modern algorithmic feeds do not merely measure what people like. They **predict, amplify, and steer** attention, then mistake the resulting behavior for public will. :contentReference[oaicite:3]{index=3}
+
+This creates:
+- compulsive infinite consumption
+- flattening of taste
+- collapse of human-scale cultural mediation
+- synthetic consensus and recursive hype
+- increasing vulnerability to AI-generated abundance :contentReference[oaicite:4]{index=4}
+
+Older systems had human filters: booksellers, radio DJs, editors, critics, store clerks, local scene people, finite publications, and shared charts. Those institutions are largely gone. Sinc is a software prosthesis for some of their lost function. 
+
+## Product thesis
+
+The answer is not no filters.  
+The answer is **owned, chosen, finite, human filters**. :contentReference[oaicite:6]{index=6}
+
+Sinc restores this by:
+- finite containers instead of infinite feeds
+- personal ranking instead of platform ranking
+- chosen human influence instead of extrapolated mass behavior
+- public measurement without public steering :contentReference[oaicite:7]{index=7}
+
+A core principle:
+
+**Sinc is a ledger, not a loop.** It records what people deliberately chose, saved, finished, and shared. It does not predict what they might want and push it harder. :contentReference[oaicite:8]{index=8}
+
+## Core product
+
+### Layer 1 — Personal Sinc Lists
+
+A sinc list is a **finite, ordered set of items in one domain**. :contentReference[oaicite:9]{index=9}
+
+Examples:
+- Japanese cinema
+- ambient music
+- true crime
+- essays
+- biotech
+- local events
+- odd signal :contentReference[oaicite:10]{index=10}
+
+A sinc list should feel closer to a playlist than a feed:
+- visible count
+- ordered by judgment
+- scrollable
+- finishable
+- greyed out when done 
+
+The key psychological difference is completion. The user finishes a list, then consciously chooses another.
+
+Important nuance: Sinc does not force austerity. After finishing a list, the user should have explicit next choices:
+- open another sinc list
+- refresh this domain
+- pull deeper / older / less-surfaced items
+- switch domain
+- apply or remove a borrowed taste overlay
+
+Sinc never assumes continuation; it offers it.
+
+### Layer 2 — Borrowed Taste
+
+Users can optionally apply a **domain-specific taste overlay** from another person they trust. 
+
+Not:
+- generic follows
+- influencer subscriptions
+- trending recommendations :contentReference[oaicite:13]{index=13}
+
+But:
+- your friend’s music taste
+- a critic’s film sense
+- your mother’s household eye
+- a local weirdo’s event radar :contentReference[oaicite:14]{index=14}
+
+Important constraint: this stays **narrow and domain-specific**. In early versions, borrowing taste means borrowing a person’s judgment in one domain, not subscribing to them as a whole personality. :contentReference[oaicite:15]{index=15}
+
+Working architectural hypothesis:
+
+**Sinc is Model B presenting as Model A.**  
+Each user’s shelves are built from their own sources and routed items, but domain labels create enough shared vocabulary that borrowing still feels coherent. What matters is not only how someone ranks a shared corpus, but what they even have on their shelves. :contentReference[oaicite:16]{index=16}
+
+## Feedback and taste learning
+
+Sinc does not optimize for engagement. It learns from **judgment signals**. :contentReference[oaicite:17]{index=17}
+
+Early feedback should focus on signals that help refine taste without collapsing into generic like/dislike sludge:
+
+- **save** — this belongs in my world
+- **dismiss** — not worth my attention
+- **wrong fit** — may be good, but wrong for this domain/list
+- **quality mismatch** — this does not meet the standard
+- **already seen** — not useful as a discovery item
+- **re-rank** — comparative judgment, stronger than a simple reaction
+- **finish / abandon** — completion is a meaningful satisfaction signal :contentReference[oaicite:18]{index=18}
+
+Principle: **comparative and contextual signals are more valuable than binary reactions**.  
+The system should prefer signals that train discernment over signals that merely register impulse. :contentReference[oaicite:19]{index=19}
+
+## Sharing and Human API
+
+Manual sharing is not a fallback. It is part of the product’s core logic.
+
+Sinc should treat intentional human routing as a first-class signal:
+- send to Sinc
+- paste URL
+- share a specific list
+- route an item into a domain
+- send a list to a particular person
+
+This is the beginning of provenance. A platform API tells us an item exists. The human API tells us a person thought it was worth another person’s attention. :contentReference[oaicite:20]{index=20}
+
+Sharing needs to be frictionless enough to support growth and back-links, but structurally distinct from feed mechanics. It should support:
+- lending a list
+- sharing a domain shelf
+- sending a specific item or list to a specific person :contentReference[oaicite:21]{index=21}
+
+## Discovery
+
+For early Sinc, **search is the only algorithm**. :contentReference[oaicite:22]{index=22}
+
+Users discover public sinc lists and public shelves through:
+- search
+- domain pages
+- direct links
+- human sharing
+- curiosity
+
+No recommender layer is required for public discovery in v1. Search, recognition, and volition are enough. Public pages should feel more like someone’s corner in a used bookstore than a social-media profile. No follower counts. No performance layer. :contentReference[oaicite:23]{index=23}
+
+## What Sinc is not
+
+- not infinite scroll
+- not engagement optimization
+- not a general social network
+- not a read-later guilt pile
+- not a creator economy platform
+- not “ethical algorithm tweaking”
+- not austerity / digital wellness scolding :contentReference[oaicite:24]{index=24}
+
+## User promise
+
+Sinc helps users:
+- see fewer, better things
+- finish what they are given
+- choose what comes next
+- borrow real human taste by consent
+- stop treating platforms as environments and start treating them as sources :contentReference[oaicite:25]{index=25}
+
+## MVP
+
+### Build first
+- account
+- domains/categories
+- source ingestion from RSS / APIs / manual “Send to Sinc”
+- finite sinc lists per domain
+- rank/order items
+- done / greyed state
+- lightweight feedback and re-ranking
+- optional borrowed taste overlay from one other user in one domain
+- public domain/list pages discoverable by search
+- frictionless sharing of items and lists 
+
+### Do not build yet
+- guild mechanics
+- sigils/passports
+- marketplace
+- formal reputation system
+- token/DAO structures
+- heavy social discovery
+- monetized curator economy
+- generalized AI assistant layer
+- public messaging layer
+- drag-to-preview taste interactions 
+
+## Data / UX principles
+
+- **Explicit cardinality**: user sees how many items are in a list
+- **Finish state**: completion must feel real
+- **Domain boundaries**: lists should remain narrow
+- **No hidden ranking magic**: user should understand why something is there
+- **No involuntary spillover**: one domain should not sludge into another
+- **Human API matters**: manual sharing is a feature, not a fallback
+- **Search before recommendation**: public discovery should start with search, not suggested people or lists
+- **Greying over matters**: completed items should remain visible as evidence of completion, not vanish into a hole 
+
+## Business model
+
+**Subscription first.**
+
+Users pay because the product works for them, not on them. Subscription aligns incentives and avoids rebuilding an ad-driven attention machine. :contentReference[oaicite:29]{index=29}
+
+## Longer-term vision
+
+### Layer 3 — Domain Reputation / Guild Layer
+A slow, domain-specific reputation layer for human curation:
+- peer-recognized, not popularity-ranked
+- narrow competence, not generic influence
+- portable standing, not follower counts
+- taste as a real cultural object, not just social exhaust 
+
+This should emerge from usage, not be imposed too early.
+
+### Collective Layer — Cultural Weather
+An optional public layer shows what is being **finished, saved, or deliberately chosen** across the network, by category. 
+
+This layer must remain:
+- lagging, not leading
+- descriptive, not prescriptive
+- opt-in, not injected
+- charts, not feeds :contentReference[oaicite:32]{index=32}
+
+**Sinc’s collective layer measures culture. It does not manufacture momentum.**  
+Items that chart in Cultural Weather are never automatically boosted into personal lists. :contentReference[oaicite:33]{index=33}
+
+## Why now
+
+AI is driving the cost of content production toward zero. As output explodes, **human judgment becomes more valuable, not less**. :contentReference[oaicite:34]{index=34}
+
+Sinc is based on the belief that in an age of infinite plausible content, the scarce civic and economic resource will be:
+- taste
+- discernment
+- provenance
+- contextual judgment
+- chosen curation :contentReference[oaicite:35]{index=35}
+
+## Working one-line definition
+
+**Sinc is a subscription product that turns the web into finite, domain-specific sinc lists shaped by your taste and the tastes of people you choose to trust, with public measurement but no algorithmic amplification.** :contentReference[oaicite:36]{index=36}
