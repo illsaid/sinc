@@ -1,0 +1,114 @@
+# WORKING_NOTES_V0_2.md
+
+# Sinc — Working Notes v0.2
+
+These notes capture ideas that extend beyond the formal product memo and separate what belongs in **v1**, **v1.5**, and **later**.
+
+## What belongs in v1
+
+These ideas directly support the first real product loop and should shape the MVP now.
+
+### 1. Shelf logic
+The central emotional metaphor is the **shelf**, not the profile. The internet scaled the performance of taste; Sinc should restore a place where taste can sit and be found. :contentReference[oaicite:37]{index=37}
+
+### 2. Model B presenting as Model A
+Users’ shelves are built from their own sources and routed items. Borrowing taste is not only “apply their weighting,” but “see what exists on their shelf in this domain.” This should inform the data model and public-page design now. :contentReference[oaicite:38]{index=38}
+
+### 3. Playlist / completion psychology
+The sinc list must feel:
+- finite
+- ordered
+- completable
+- greyed when processed
+- renewable only by explicit choice
+
+This is core to v1 and not negotiable. :contentReference[oaicite:39]{index=39}
+
+### 4. Search as the only algorithm
+Public discovery in v1 should rely on:
+- search
+- domain pages
+- public lists
+- direct links
+- human curiosity
+
+No recommender layer for people or lists in v1. :contentReference[oaicite:40]{index=40}
+
+### 5. Ledger-not-loop public signals
+If any public ranking exists in v1 at all, it should use lagging signals only:
+- completion
+- save
+- directed send
+- maybe external share, lightly weighted
+
+This is measurement, not amplification. :contentReference[oaicite:41]{index=41}
+
+### 6. Human API / routing
+Manual routing is core:
+- send to Sinc
+- paste
+- share a list
+- send a list to a specific person
+
+This is not just ingestion. It is the seed of later provenance and reputation. :contentReference[oaicite:42]{index=42}
+
+### 7. Audience wedge
+The initial user wedge is still right:
+- Gen X people with real accumulated taste and no desire to build a brand
+- Millennials / Gen Z users exhausted by performance platforms but missing vocabulary for the alternative :contentReference[oaicite:43]{index=43}
+
+## What belongs in v1.5
+
+These ideas are strong, but they should wait until the core loop is alive.
+
+### 1. Glyph system
+No profile photos is interesting. Generative glyphs as seals are promising. But full glyph doctrine, combined glyphs, and identity symbolism should wait until the product earns them. :contentReference[oaicite:44]{index=44}
+
+### 2. Combined glyph for borrowed taste
+The interleaved glyph as a receipt for blended taste is conceptually excellent, but it is ornamental relative to v1. Keep it in notes, not in the first build. :contentReference[oaicite:45]{index=45}
+
+### 3. Drag-to-preview taste borrowing
+This could be beautiful later, but in v1 borrowed taste should just be:
+- turn overlay on
+- see reordered list
+- turn it off
+
+The drag interaction is a v1.5 delight, not a v1 requirement. :contentReference[oaicite:46]{index=46}
+
+### 4. Communication layer / “leave a note”
+The post-it-note communication idea is very good:
+- flat
+- short
+- owner-controlled
+- perishable
+- no notification treadmill
+
+But it is still a social layer. It should wait until shelves and borrowing are working. v1.5 at earliest. :contentReference[oaicite:47]{index=47}
+
+### 5. Public whole-profile sharing
+In v1, share specific lists and maybe specific domain shelves.
+Whole-profile sharing should wait until users actually have depth across domains. :contentReference[oaicite:48]{index=48}
+
+### 6. Cultural Weather as a visible product surface
+The conceptual distinction is already important in v1, but the actual user-facing chart layer can wait until there is enough network activity to make it meaningful. v1.5 or later. 
+
+## What should stay in deep-future notes
+
+Do not pull these forward yet.
+
+- guild structures
+- expert curation markers / badges
+- reputation expansion rules
+- curator rewards / monetization
+- public standing systems
+- sigils/passports as formal trust objects
+- any marketplace logic
+- protocol layer thinking
+
+These are Layer 3 concerns and should emerge from actual use, not be designed in advance. 
+
+## Updated note to self
+
+**v1 proves the loop.  
+v1.5 proves the feel.  
+Layer 3 emerges, if it deserves to.**
