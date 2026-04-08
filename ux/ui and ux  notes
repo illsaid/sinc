@@ -1,0 +1,465 @@
+# Sinc — UX/UI Working Document v0.1
+
+This document captures the core UX/UI decisions worked out so far for Sinc. It should be read alongside the product memo and working notes, but it is narrower in scope: this is about interaction shape, interface behavior, and user psychology.
+
+---
+
+## 1. Core UX premise
+
+Sinc is not an infinite feed. It is a system of **finite, finishable containers**.
+
+The main job of the interface is to help the user:
+- enter a domain
+- work through a bounded list
+- make judgments
+- experience completion
+- consciously choose what comes next
+
+This is the opposite of feed design.
+
+A good shorthand:
+
+**Sinc does not trap continuation. It offers continuation.**
+
+---
+
+## 2. Primary object: the sinc list
+
+A **sinc list** is the core UI object.
+
+It should feel closer to a playlist than a feed:
+- visible count
+- ordered
+- scrollable
+- finite
+- completable
+- renewable only by explicit choice 
+
+### Required visible properties
+Every sinc list should show:
+- domain name
+- total item count
+- progress count
+- borrowed taste state, if active
+- whether new incoming items are waiting
+
+### Example header
+- **Japanese Cinema**
+- **7 items**
+- **4/7 complete**
+- **Borrowing Elena’s taste**
+- **1 new item waiting**
+
+---
+
+## 3. Completion is the load-bearing interaction
+
+The most important psychological state in Sinc is **completion**.
+
+Users must be able to finish a list and feel:
+- done
+- acknowledged
+- free to stop
+- free to continue by choice
+
+### Completion behavior
+When an item is processed, it should:
+- remain visible
+- grey over
+- still be legible as part of the list’s history 
+
+Completed items should not vanish. Vanishing destroys the sense of accomplishment.
+
+### End-of-list state
+When a list is complete, Sinc should show a dedicated completion panel with:
+
+#### Acknowledgment
+- “You finished Ambient Music”
+- “7 of 7 processed”
+
+#### Reflection
+- saved: 3
+- wrong fit: 2
+- already seen: 1
+- dismissed: 1
+
+#### Next choices
+- refresh this list
+- go deeper / older
+- open another domain
+- add one thing of your own
+- borrow or remove taste
+
+The first post-completion action should push gently toward ownership.
+
+---
+
+## 4. Post-completion ownership transition
+
+The critical UX bridge is from:
+- passive use of a starter shelf
+to
+- active contribution to a personal shelf
+
+This happens at the end of the first completed list.
+
+### Primary CTA after first completion
+**Add one thing to this shelf**
+
+Not:
+- connect all your accounts
+- manage sources
+- build your system
+
+The ask should be small and concrete.
+
+### Good supporting copy
+- “What belongs here that we missed?”
+- “Put one thing on the shelf”
+- “Make this list more like you”
+
+This is how Sinc moves the user from consumer to participant.
+
+---
+
+## 5. Day-one onboarding: anti-blank strategy
+
+Users must not encounter an empty house.
+
+### Day-one rule
+**Every new user should get a non-empty shelf within 60 seconds.**
+
+### Onboarding flow
+1. Pick 3–5 domains
+2. Seed each one with:
+   - starter shelf
+   - borrowed public shelf
+   - optional user sources
+3. Generate first sinc lists immediately
+4. Let feedback shape the next ones
+
+### UX principle
+The user should feel:
+- “I am choosing shelves”
+not
+- “I am configuring a media operating system”
+
+---
+
+## 6. Discovery model
+
+For v1, **search is the only algorithm**. :contentReference[oaicite:2]{index=2}
+
+Users discover public lists and shelves through:
+- search
+- domain pages
+- direct links
+- human shares
+
+There should be:
+- no “recommended curators” module
+- no “people you may like”
+- no social growth treadmill
+
+### Public page feeling
+Public pages should feel like:
+- a person’s section in a used bookstore
+- a shelf you can browse
+- not a social profile
+
+They should avoid:
+- follower counts
+- engagement badges
+- visible performance metrics :contentReference[oaicite:3]{index=3}
+
+---
+
+## 7. Borrowed taste UX
+
+Borrowed taste must feel:
+- reversible
+- narrow
+- domain-specific
+- legible
+
+### v1 interaction
+Borrowed taste in v1 should be simple:
+- turn overlay on
+- see reordered list
+- turn overlay off
+
+No complex gesture is required in the first build.
+
+### Visible borrowed-taste cues
+If an overlay is active, the UI should show:
+- borrowed person/domain name
+- overlay weight or simple on/off state
+- item-level badge where relevant
+
+The user must always understand when someone else’s judgment is influencing the list.
+
+### Rule
+Borrowed taste applies to one domain only. No transitive or general whole-profile borrowing in v1. 
+
+---
+
+## 8. Sharing UX
+
+Sharing is not secondary. It is core to:
+- growth
+- provenance
+- human API
+- future reputation
+
+### Sharing must support
+- sharing an item
+- lending a sinc list
+- sharing a domain shelf
+- sending a list to a specific person :contentReference[oaicite:5]{index=5}
+
+### Design principle
+Sharing should feel:
+- deliberate
+- lightweight
+- human
+- not viral
+
+The preferred mental model is:
+- “here, take this”
+not
+- “broadcast this”
+
+---
+
+## 9. Human API entry points
+
+Sinc needs visible, friction-light manual routing paths.
+
+### Required v1 entry points
+- paste URL
+- send to Sinc via browser/share sheet
+- share a list
+- route an item into a shelf
+
+These are not just ingestion tools. They are signals of deliberate judgment. :contentReference[oaicite:6]{index=6}
+
+---
+
+## 10. Paste-a-link flow
+
+This is the first ownership action and must feel excellent.
+
+### UX requirements
+- fast metadata parsing
+- instant preview
+- clear domain confirmation
+- backend registration as a strong ownership signal
+
+### Success state
+After a successful paste:
+- show preview card
+- show “Added to Ambient Music”
+- mark it as part of the user’s shelf
+- make clear it will influence the next sinc list
+
+### Rule
+A pasted item is immediately owned, but usually becomes part of the **next finite list**, not an awkward one-item list.
+
+### Empty-domain exception
+If a domain is empty, the pasted item can seed the first list, but the system should still try to generate a small coherent list around it.
+If only 2 valid items exist, show 2. Never pad with mismatched junk.
+
+---
+
+## 11. Incoming / OS share-sheet items
+
+Items sent from outside the app should arrive like **deliveries to a shelf**, not like notifications in a feed.
+
+### Next-open pattern
+On app open:
+- show quiet shelf notice:
+  - “1 new item added to Ambient Music”
+- allow:
+  - View
+  - Later
+
+### In-domain pattern
+Inside the domain, show:
+- **New on your shelf**
+- preview card
+- source
+- timestamp
+- badge: added via share
+
+Actions:
+- use in next list
+- open now
+- wrong domain
+- dismiss
+
+### Principle
+Incoming items should be visible enough to avoid the black-hole effect, but should not break the integrity of the current finite list.
+
+---
+
+## 12. No durable unsorted inbox
+
+Sinc must not allow a generic unsorted pile to form.
+
+That recreates the exact “read-later guilt heap” the product is trying to escape.
+
+### Rule
+Every item must quickly become one of:
+- placed on a shelf
+- discarded
+- briefly deferred
+
+No permanent unsorted state.
+
+### Resolve This Item flow
+If an item arrives without a confident domain:
+- show a required lightweight resolver on next open
+- present:
+  - suggested shelves
+  - choose shelf
+  - create new shelf
+  - discard
+  - not now (temporary only)
+
+### Snooze rule
+“Not now” may exist briefly, but after a limited number of deferrals it disappears.
+
+Final state must enforce:
+- place
+- create
+- discard
+
+No silent deletion.
+
+---
+
+## 13. Creating a new shelf from Resolve
+
+If an incoming item genuinely fits none of the user’s existing shelves, v1 should allow:
+- **+ New shelf**
+
+But this should be tightly constrained.
+
+### v1 rules
+- inline only
+- shelf name only
+- no aesthetic setup
+- item is placed immediately
+- suggest existing similar shelves before allowing creation
+
+### Duplicate prevention
+The backend must use fuzzy matching to detect overlap:
+- “Did you mean Japanese Cinema?”
+- “You already have Independent Gaming”
+
+### Philosophy
+The system should let the user correct the ontology, but not explode it.
+
+---
+
+## 14. Shelf-count limits
+
+The finite-container model breaks if users generate endless micro-shelves.
+
+### v1 target
+- healthy range: 4–7 active shelves
+- soft warning: 8
+- crowded: 10
+- hard cap: 12 active shelves
+
+### UX principle
+Sinc is a small house, not a warehouse.
+
+At cap, the user should be required to:
+- place item in an existing shelf
+- archive a shelf
+- or discard
+
+New shelves should have cost once the house is full.
+
+---
+
+## 15. Public communication layer (not v1)
+
+There is a promising later interaction called **Leave a note**:
+- flat
+- short
+- owner-controlled
+- perishable
+- no notification treadmill :contentReference[oaicite:7]{index=7}
+
+This is a v1.5 idea, not a v1 requirement.
+
+If built later, it should feel like:
+- a post-it note on a book left at someone’s door
+not
+- a comment section
+
+---
+
+## 16. Visual design principles
+
+Sinc should feel:
+- contemporary but non-compliant
+- edited, not optimized
+- calm
+- shelf-like
+- human
+- domain-specific
+- lightly tactile rather than hyper-animated :contentReference[oaicite:8]{index=8}
+
+### Visual/UI rules
+- no feed-like visual aggression
+- no endless-loading affordances
+- no red-badge obligation loops
+- minimal animation
+- completion states should feel dignified, not gamified
+- shelves/lists should feel object-like
+
+### Design tone
+The product should feel more like:
+- a long-form editor
+- a record shelf
+- a personal section in a used bookstore
+
+And less like:
+- a dashboard
+- a social app
+- a productivity tool
+
+---
+
+## 17. Core v1 UX laws
+
+1. **Every list must be finishable.**
+2. **Every continuation must be chosen.**
+3. **Every incoming item must find a shelf or die.**
+4. **Every borrowed influence must be visible.**
+5. **Every public signal must be lagging, never steering.**
+6. **Every shelf must remain narrow enough to mean something.**
+7. **Search precedes recommendation.**
+8. **Completion beats compulsion.**
+
+---
+
+## 18. Working UX summary
+
+**v1 proves the loop.**
+- pick shelf
+- process list
+- finish list
+- add one thing
+- repeat
+
+**v1.5 proves the feel.**
+- better borrowed taste gestures
+- glyph/seal identity
+- leave-a-note layer
+- visible cultural weather
+
+**Anything beyond that must be earned by actual use.**
