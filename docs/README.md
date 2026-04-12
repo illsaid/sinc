@@ -6,6 +6,7 @@ This folder collects working docs, synthesis notes, and spin-off concept memos r
 - `SINC_HOLE_EXPLORATION_REPORT.md` — synthesis report from the broader concept exploration
 - `SINC_UNIVERSE_MAP.md` — quick strategic map of core / wedges / layers / primitives / discard pile
 - `SINC_V0_4_DESIGN_NOTES.md` — design notes focused on stalled shelves, negative curation, and bounded circulatory support
+- `SINC_NEXT_STEPS_PLAN.md` — implementation-oriented sequencing plan for proving the core Sinc loop before broader social complexity
 - `ANCILLARY_CONCEPT_NOTES_TRUSTSTER_GUTCHECK_LENS.md` — keeper/discard notes from adjacent overlay/trust concepts
 - `KEEPER_NOTES_CLERK_AUDITOR_SYNAPSE.md` — keeper notes from Clerk, Auditor, and Synapse exploration
 
